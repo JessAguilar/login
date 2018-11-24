@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Tabla de Ingresos y Egresos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      Tabla
+    </ion-card-header>
+    <ion-card-content padding-bottom>
+      <ion-list>
+        <ion-item  *ngFor="let message of messages">
+          <ion-label>
+            <h3>Venta de: <b>{{message.marca}} {{message.modelo}}</b></h3>
+            <h3>Cantidad: {{message.cantidad}}</h3>
+            <h2>+{{message.precio}}</h2>
+          </ion-label>
+        </ion-item>
+        <ion-item  *ngFor="let compra of compras">
+          <ion-label>
+            <h3>Compra de: <b>{{compra.nombreCelular}}</b></h3>
+            <h3>Cantidad: {{compra.cantidad}}</h3>
+            <h2>-{{compra.precio}}</h2>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Ganancia
+    </ion-card-header>
+    <ion-card-content padding-bottom>
+        <ion-label *ngFor="let tienda of tiendas">
+          {{tienda.ingresos}}
+        </ion-label>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Pagar Impuestos
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-button>Pagar IVA</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button>Pagar IUE</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button>Pagar IT</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      Pagar Empleado
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let message2 of messages2">
+          <ion-label>
+            <h2>{{message2.nombre}}</h2>
+            <h3>{{message2.salario}} Bs.</h3>
+            <ion-button>Pagar</ion-button>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Venta de Celulares</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides pager="true">
+    <ion-slide *ngFor="let message of messages">
+      <ion-card>
+        <ion-img [src]="message.imagen"></ion-img>
+        <ion-card-header>
+            <ion-card-title>{{ message.marca }} {{ message.modelo }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Este producto: Smartphone de 6.28" (Pantalla AMOLED 19:9 FullHD, cámara dual 16+20MP, 8GB de RAM, hasta 128GB de memoria, Qualcomm Snapgradon 845) negro (mirror black)</p>
+        </ion-card-content>
+        <ion-row no-padding >
+              <ion-col>
+                <ion-button shape="round" color="primary" fill="outline" (click)="presentModal()">Añadir al carro</ion-button>
+              </ion-col>
+        </ion-row>
+    </ion-card>
+  </ion-slide>
+  </ion-slides>
+</ion-content>

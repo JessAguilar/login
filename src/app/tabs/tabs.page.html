@@ -1,0 +1,71 @@
+<ion-tabs>
+
+  <ion-tab tab="home">
+    <ion-router-outlet name="home"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab tab="about">
+    <ion-router-outlet name="about"></ion-router-outlet>
+  </ion-tab>
+  <ion-tab tab="contact">
+    <ion-router-outlet name="contact"></ion-router-outlet>
+  </ion-tab>
+
+  <ion-tab tab="ventas">
+    <ion-router-outlet name="ventas"></ion-router-outlet>
+  </ion-tab>
+
+  <ion-tab tab="compras">
+    <ion-router-outlet name="compra"></ion-router-outlet>
+  </ion-tab>
+
+  <ion-tab tab="inventario2">
+    <ion-router-outlet name="inventario2"></ion-router-outlet>
+  </ion-tab>
+
+  <ion-tab tab="TablaIngEgr">
+    <ion-router-outlet name="TablaIngEgr"></ion-router-outlet>
+  </ion-tab>
+
+
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button tab="home" href="/tabs/(home:home)">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="about" href="/tabs/(about:about)">
+      <ion-icon name="information-circle"></ion-icon>
+      <ion-label>About</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="contact" href="/tabs/(contact:contact)">
+      <ion-icon name="contacts"></ion-icon>
+      <ion-label>Contact</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button tab="ventas" href="/tabs/(ventas:ventas)">
+      <ion-icon name="md-basket"></ion-icon>
+      <ion-label>Ventas</ion-label>
+    </ion-tab-button>
+
+
+<ion-tab-button tab="compras" href="/tabs/(compra:compra)">
+  <ion-icon name="logo-usd"></ion-icon>
+  <ion-label>Compras</ion-label>
+</ion-tab-button>
+
+
+    <ion-tab-button tab="inventario2" href="/tabs/(inventario2:inventario2)">
+      <ion-icon name="logo-usd"></ion-icon>
+      <ion-label>Inventario</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button tab="IngEgr" href="/tabs/(TablaIngEgr:TablaIngEgr)">
+      <ion-icon name="logo-usd"></ion-icon>
+      <ion-label>Ing-Egr</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

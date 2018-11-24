@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Interfaz Invetario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card class="b">
+    <ion-card-header>
+        <ion-card-title align="center">Datos del Producto</ion-card-title>
+    </ion-card-header>
+      <ion-card-content>
+          <ion-grid>
+                <ion-row>
+                        <ion-col>
+                            <ion-label for="">Marca de celular</ion-label>
+                              <ion-input required type="text" placeholder="Marca" [(ngModel)]="model.marca"></ion-input>
+                        </ion-col>
+                        <ion-col>
+                            <ion-label for="">Modelo de Celular</ion-label>
+                              <ion-input required type="text" placeholder="Modelo" [(ngModel)]="model.modelo"></ion-input>
+                        </ion-col>
+                        <ion-col size="12">
+                            <ion-label for="">Link</ion-label>
+                              <ion-input required type="text" placeholder="URL" [(ngModel)]="model.imagen"></ion-input>
+                        </ion-col>
+                        <ion-col size="12">
+                            <ion-label>Color de Celular</ion-label>
+                                <ion-input required type="text" placeholder="Color" [(ngModel)]="model.color"></ion-input>
+                        </ion-col>
+                        <ion-col size="6">
+                            <ion-label>Precio Comprado</ion-label>
+                            <ion-input required type="text" placeholder="Compra" [(ngModel)]="model.precioCompra"></ion-input>
+                        </ion-col>
+                        <ion-col size="6">
+                                <ion-label>Precio de Venta</ion-label>
+                                <ion-input required type="text" placeholder="Venta" [(ngModel)]="model.precioVenta"></ion-input>
+                        </ion-col>
+                        <ion-col size="12">
+                                <ion-input required type="text" placeholder="Descripcion" [(ngModel)]="model.descripcion"></ion-input>
+                        </ion-col>
+                        <ion-col size="12">
+                                <ion-button expand="block" shape="round" color="primary" fill="outline" (click)="addMessage()">Ingresar Producto</ion-button>
+                        </ion-col>
+                    </ion-row>
+          </ion-grid>
+        </ion-card-content>
+</ion-card>
+
+<ion-card>
+    <ion-card-header>
+        <ion-card-title align="center">Lista de Productos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-list>
+            <ion-item-sliding *ngFor="let message of messages">
+            <ion-item>
+                <ion-grid>
+                    <ion-row>
+                            <ion-img [src]="message.imagen"></ion-img>
+                        <ion-col size="12">
+                            <h1 align="center"><b>{{ message.marca }} {{ message.modelo }}</b></h1>
+                        </ion-col>
+                        <ion-col size="6">
+                            <p>Precio adquido: {{ message.precioCompra }}</p>
+                        </ion-col>
+                        <ion-col size="6">
+                            <p>Precio a vender: {{message.precioVenta }}</p>
+                        </ion-col> 
+                        <ion-col>
+                            <ion-button color="danger" size="large" (click)="deleteMessage(message.$key)">
+                                <ion-icon name="ios-trash"></ion-icon>
+                                    borrar
+                              </ion-button>
+                        </ion-col>
+                        <ion-col>
+                            <ion-button color="danger" size="large" (click)="updateMessage(message)">
+                                <ion-icon name="ios-create"></ion-icon>
+                                    editar
+                            </ion-button>
+                        </ion-col>           
+                      </ion-row>
+                    </ion-grid>
+            </ion-item>
+            </ion-item-sliding>
+        </ion-list>
+    </ion-card-content>
+</ion-card>
+
+</ion-content>
